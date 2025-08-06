@@ -1,0 +1,42 @@
+[
+    {
+        "input": "What is the capital of France?",
+        "expected": "The capital of France is Paris.",
+        "metadata": {
+            "category": "geography",
+            "difficulty": "easy"
+        }
+    },
+    {
+        "input": "Explain the concept of machine learning in simple terms.",
+        "expected": "Machine learning is a method of teaching computers to learn patterns from data without being explicitly programmed for each task.",
+        "metadata": {
+            "category": "technology",
+            "difficulty": "medium"
+        }
+    },
+    {
+        "input": "What are the main causes of climate change?",
+        "expected": "The main causes of climate change include greenhouse gas emissions from fossil fuels, deforestation, industrial processes, and agriculture.",
+        "metadata": {
+            "category": "environment",
+            "difficulty": "medium"
+        }
+    },
+    {
+        "input": "How do you calculate compound interest?",
+        "expected": "Compound interest is calculated using the formula: A = P(1 + r/n)^(nt), where A is the final amount, P is principal, r is annual interest rate, n is number of times interest compounds per year, and t is time in years.",
+        "metadata": {
+            "category": "mathematics",
+            "difficulty": "medium"
+        }
+    },
+    {
+        "input": "Name three benefits of renewable energy.",
+        "expected": "Three benefits of renewable energy are: 1) Environmental sustainability with reduced carbon emissions, 2) Long-term cost savings, and 3) Energy independence from fossil fuel imports.",
+        "metadata": {
+            "category": "environment",
+            "difficulty": "easy"
+        }
+    }
+]

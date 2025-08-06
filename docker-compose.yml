@@ -1,0 +1,63 @@
+# Docker Compose for ShadowBench Enterprise
+version: '3.8'
+
+services:
+  shadowbench:
+    build: .
+    container_name: shadowbench-enterprise
+    ports:
+      - "8080:8080"    # Dashboard
+      - "8000:8000"    # API
+    volumes:
+      - ./results:/app/results
+      - ./logs:/app/logs
+      - ./configs:/app/configs
+    environment:
+      - SHADOWBENCH_ENV=production
+      - PYTHONPATH=/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "shadowbench.py", "version"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  dashboard:
+    build: .
+    container_name: shadowbench-dashboard
+    command: ["server"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./results:/app/results:ro
+      - ./logs:/app/logs
+    environment:
+      - SHADOWBENCH_ENV=production
+    depends_on:
+      - shadowbench
+    restart: unless-stopped
+
+  benchmark-runner:
+    build: .
+    container_name: shadowbench-benchmark
+    command: ["benchmark"]
+    volumes:
+      - ./results:/app/results
+      - ./logs:/app/logs
+    environment:
+      - SHADOWBENCH_ENV=production
+    profiles:
+      - benchmark
+    restart: no
+
+networks:
+  default:
+    name: shadowbench-network
+    driver: bridge
+
+volumes:
+  results:
+    driver: local
+  logs:
+    driver: local

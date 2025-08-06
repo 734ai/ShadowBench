@@ -1,0 +1,107 @@
+{
+  "plugin_id": "sample_attack_plugin",
+  "name": "Sample Attack Plugin",
+  "version": "1.0.0",
+  "description": "Sample text-based adversarial attack plugin demonstrating character and word substitution attacks",
+  "author": "ShadowBench Team",
+  "plugin_type": "attack_generator",
+  "api_version": "1.0",
+  "entry_point": "sample_plugin.py",
+  "dependencies": [],
+  "permissions": [
+    "data_modify"
+  ],
+  "configuration_schema": {
+    "type": "object",
+    "properties": {
+      "attack_intensity": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "default": 0.1,
+        "description": "Ratio of characters to modify (0.0 to 1.0)"
+      },
+      "character_substitutions": {
+        "type": "object",
+        "default": {
+          "a": "@",
+          "e": "3", 
+          "i": "1",
+          "o": "0",
+          "s": "$",
+          "t": "7"
+        },
+        "description": "Character substitution mappings"
+      },
+      "word_replacements": {
+        "type": "object",
+        "default": {
+          "good": "bad",
+          "safe": "unsafe",
+          "secure": "vulnerable",
+          "trust": "doubt",
+          "verify": "ignore",
+          "clean": "malicious"
+        },
+        "description": "Word replacement mappings"
+      }
+    },
+    "additionalProperties": false
+  },
+  "requirements": [],
+  "tags": [
+    "text",
+    "adversarial",
+    "substitution",
+    "demonstration",
+    "sample"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/shadowbench/plugins/sample_attack",
+  "documentation": "https://shadowbench.readthedocs.io/plugins/sample_attack",
+  "supported_platforms": [
+    "linux",
+    "windows", 
+    "macos"
+  ],
+  "minimum_python_version": "3.8",
+  "test_cases": [
+    {
+      "name": "basic_text_attack",
+      "input": "This is a test message",
+      "expected_output_type": "object",
+      "expected_fields": [
+        "original_text",
+        "attacked_text", 
+        "attack_success",
+        "metrics"
+      ]
+    },
+    {
+      "name": "empty_text",
+      "input": "",
+      "expected_output_type": "object",
+      "expected_fields": [
+        "original_text",
+        "attacked_text"
+      ]
+    },
+    {
+      "name": "special_characters",
+      "input": "Hello @world! #testing $123",
+      "expected_output_type": "object"
+    }
+  ],
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2024-01-01",
+      "changes": [
+        "Initial release",
+        "Character substitution attack",
+        "Word replacement attack",
+        "Semantic similarity calculation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+adversarial_config:
+  attacks:
+    few_shot_poisoning:
+      enabled: true
+      injection_rate: 0.3
+    prompt_injection:
+      enabled: true
+      intensity: 0.5
+      type: prefix
+max_retries: 3
+metrics_config:
+  deception_metrics: true
+  privacy_score: true
+  robustness_score: true
+model_configs:
+- id: gpt-3.5
+  params:
+    max_tokens: 500
+    model_name: gpt-3.5-turbo
+    temperature: 0.7
+  type: openai
+output_dir: results
+scenario: llm/basic_qa
+timeout: 30

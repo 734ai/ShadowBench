@@ -1,0 +1,38 @@
+{
+  "unified_scoring": {
+    "execution_time_seconds": 0.0038909912109375,
+    "peak_memory_mb": 140.52734375,
+    "cpu_usage_percent": 34.25,
+    "memory_efficiency_score": 0.85947265625,
+    "throughput_evaluations_per_second": 25700.392156862745,
+    "total_evaluations": 100
+  },
+  "perturbation_engine": {
+    "execution_time_seconds": 0.0075969696044921875,
+    "peak_memory_mb": 140.52734375,
+    "cpu_usage_percent": 28.55,
+    "memory_efficiency_score": 0.85947265625,
+    "throughput_evaluations_per_second": 6581.571679638463,
+    "total_evaluations": 50
+  },
+  "end_to_end_evaluation": {
+    "execution_time_seconds": 0.0008745193481445312,
+    "peak_memory_mb": 140.52734375,
+    "cpu_usage_percent": 50.0,
+    "memory_efficiency_score": 0.85947265625,
+    "throughput_evaluations_per_second": 1143.485278080698,
+    "total_evaluations": 1
+  },
+  "system_info": {
+    "cpu_count": 8,
+    "total_memory_gb": 11.50716781616211,
+    "python_version": "3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]",
+    "platform": "linux"
+  },
+  "performance_summary": {
+    "average_execution_time_seconds": 0.004120826721191406,
+    "average_memory_usage_mb": 140.52734375,
+    "average_throughput_eps": 11141.816371527302,
+    "performance_grade": "A+ (Excellent)"
+  }
+}
